@@ -1,0 +1,45 @@
+*{
+    font-family: sans-serif;
+}
+
+.form_register{
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin: auto;
+    padding: 15px;
+}
+
+.title-user h2{
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+.cards label + input{
+    margin-top: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 1em 0 1em 10px;
+    border-radius: 25px;
+    transition: all .3s ease-in;
+}
+
+.cards label + input:focus{
+    background-color: #ccc;
+    padding-left: 1em;
+}
+
+.div-btn{
+    text-align: center;
+}
+
+.btn{
+    width: 30%;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
