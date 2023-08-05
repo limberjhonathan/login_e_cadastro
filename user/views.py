@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 
 def cadastro(request):
     print(request.method)
+
+    if request.method == 'GET':
+        return render(
+            request,
+            'home/cadastro.html'
+            )
     # print(request.POST)
     username = request.POST.get('user')
     email = request.POST.get('email')
@@ -18,11 +24,6 @@ def cadastro(request):
     user.save()
         
     print(user)
-    return render(
-        request,
-        'home/cadastro.html'
-
-    )
 
 def login(request):
     return render(
