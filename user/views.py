@@ -27,7 +27,6 @@ def cadastro(request):
 
     user = User.objects.filter(username=username).first()
     if user:
-        login(request, user)
         return HttpResponse("Este usuario ja existe")
     
     user = User.objects.create_user(username=username, email=email, password=senha)
@@ -51,6 +50,7 @@ def login_user(request):
     print(username, senha)
     user = authenticate(username=username, password=senha)
     if user:
+        login(request, user)
         return render(
             request,
             'templates/login_success.html'
