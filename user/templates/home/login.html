@@ -1,1 +1,33 @@
-<h1>Login</h1>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <article class="form_register">
+        <form action="#" class="cards" method="POST">{% csrf_token %}
+            <div class="title-user">
+                <h2>login Usuario</h2>
+            </div>
+            <div class="card">
+                <label for="user">Usuario</label>
+                <input type="text" id="user" placeholder="Seu nome"  name="user" required>
+            </div>
+            <div class="card">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Sua senha"  name="password">
+            </div>
+            <div class="cadastro">
+                <a href="{% url 'user:cadastro' %}">Cadastro</a>
+            </div>
+            <div class="div-btn">
+                <input type="submit" value="enviar" class="btn">
+            </div>
+        </form>
+    </article>
+</body>
+</html>

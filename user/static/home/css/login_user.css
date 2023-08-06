@@ -1,0 +1,45 @@
+*{
+    font-family: sans-serif;
+}
+
+.home{
+    width: 50%;
+    border: 1px solid #ccc;
+    margin: auto;
+    margin-top: 6em;
+    text-align: center;
+}
+
+.home .cont-login{
+    padding: 1em;
+}
+
+.home .cont-login a{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    background-color: #999292;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.test_login{
+    text-align: center;
+}
+
+.test_login a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.test_login a:hover{
+    border: 1px solid green;
+    color: green;
+}
