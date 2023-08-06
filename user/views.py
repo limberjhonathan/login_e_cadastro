@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login , logout
 from django.contrib.auth.decorators import login_required
 
 
@@ -32,6 +32,8 @@ def cadastro(request):
     
     user = User.objects.create_user(username=username, email=email, password=senha)
     user.save()
+
+    return HttpResponseRedirect('/login')
     return HttpResponse("Cadastro realizado com sucesso")
 
     print(user)
@@ -53,10 +55,16 @@ def login_user(request):
             request,
             'templates/login_success.html'
         )
+    return HttpResponse("Não foi possivel realizar o login")
 
 # so sera diresionado se estiver logado
-@login_required
+# @login_required
 def plataforma(request):
-    # if request.user.is_authenticated:
-    #     return HttpResponse("Usuário logados com sucesso")
+    if request.user.is_authenticated:
+        return HttpResponse("Usuário logados com sucesso")
     return HttpResponse("E necessario estar logado")
+
+@login_required
+def logout_user(request):
+    logout(request)
+    return HttpResponseRedirect('/login')

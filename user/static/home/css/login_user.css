@@ -43,3 +43,11 @@
     border: 1px solid green;
     color: green;
 }
+
+.logout{
+    margin-top: 15px;
+}
+
+.logout a:hover{
+    border: 1px solid red;
+}
