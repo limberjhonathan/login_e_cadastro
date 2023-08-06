@@ -64,7 +64,9 @@ def plataforma(request):
         return HttpResponse("Usuário logados com sucesso")
     return HttpResponse("E necessario estar logado")
 
-@login_required
+# @login_required
 def logout_user(request):
+    if not(request.user.is_authenticated):
+        return HttpResponse("Para usar o método 'deslogar' e necessario estar logado")
     logout(request)
     return HttpResponseRedirect('/login')
